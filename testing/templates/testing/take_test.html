@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>{{ test.title }}</h2>
+    <form method="post">
+        {% csrf_token %}
+        {% for question in test.questions.all %}
+            <h4>{{ question.text }}</h4>
+            {% for answer in question.answers.all %}
+                <div>
+                    <input type="radio" name="{{ question.id }}" value="{{ answer.id }}" id="answer{{ answer.id }}">
+                    <label for="answer{{ answer.id }}">{{ answer.text }}</label>
+                </div>
+            {% endfor %}
+        {% endfor %}
+        <button type="submit">Завершити тест</button>
+    </form>
+{% endblock %}

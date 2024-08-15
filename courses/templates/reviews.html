@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Відгуки{% endblock %}
+
+{% block content %}
+<div class="reviews-container">
+    <div class="review-form">
+        <h4>Додати відгук</h4>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="id_course">Курс</label>
+                {{ form.course }}
+            </div>
+            <div class="form-group">
+                <label for="id_name">Ім'я</label>
+                {{ form.name }}
+            </div>
+            <div class="form-group">
+                <label for="id_email">Електронна пошта</label>
+                {{ form.email }}
+            </div>
+            <div class="form-group">
+                <label for="id_rating">Оцінка</label>
+                {{ form.rating }}
+            </div>
+            <div class="form-group">
+                <label for="id_comment">Коментар</label>
+                {{ form.comment }}
+            </div>
+            <button type="submit" class="btn btn-primary">Надіслати</button>
+        </form>
+    </div>
+    <hr>
+    <div class="review-list">
+    <h2>Відгуки</h2>
+        {% for review in reviews %}
+            <div class="review">
+                <h5>{{ review.name }} <small>({{ review.rating }}/5)</small></h5>
+                <p>{{ review.comment }}</p>
+                <p><strong>Курс:</strong> {{ review.course.title }}</p>
+                <small class="text-muted">{{ review.created_at }}</small>
+            </div>
+            <hr>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

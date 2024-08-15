@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Відеоуроки для {{ course.title }}{% endblock %}
+
+{% block content %}
+    <div class="container my-4">
+        <h2>Відеоуроки для {{ course.title }}</h2>
+        <ul class="list-group">
+            {% for video in videos %}
+                <li class="list-group-item">
+                    <h5>{{ video.title }}</h5>
+                    <video controls>
+                        <source src="{{ video.url }}" type="video/mp4">
+                        Ваш браузер не підтримує відтворення відео.
+                    </video>
+                </li>
+            {% empty %}
+                <p>Немає доступних відеоуроків для цього курсу.</p>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

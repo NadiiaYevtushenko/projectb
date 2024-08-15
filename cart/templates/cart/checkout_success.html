@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Успішне оформлення замовлення{% endblock %}
+
+{% block content %}
+<div class="checkout-success-container">
+    <h2>Ваше замовлення успішно оформлено!</h2>
+
+    <p>Дякуємо за покупку! Ваше замовлення оброблено, і ви отримаєте підтвердження на вашу електронну пошту.</p>
+
+    <p>Ви можете переглянути інші курси.</p>
+
+    <a href="{% url 'course_list' %}">
+        <button class="btn btn-success">Перейти до курсів</button>
+    </a>
+</div>
+{% endblock %}

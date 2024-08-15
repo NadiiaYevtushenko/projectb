@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ course.title }} - Відео{% endblock %}
+
+{% block content %}
+<div class="video-container">
+    <h2>Відео по курсу: {{ course.title }}</h2>
+    <ul class="list-group">
+        {% for video in videos %}
+            <li class="list-group-item">
+                <h4>{{ video.title }}</h4>
+                <p>{{ video.description }}</p>
+                <a href="{{ video.video_url }}" target="_blank" class="btn btn-primary">Переглянути відео</a>
+                <small>Дата завантаження: {{ video.upload_date }}</small>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}Ваш кошик{% endblock %}
+
+{% block content %}
+<div class="cart-container">
+    <h2>Ваш кошик</h2>
+    <form method="post" action="{% url 'update_cart' %}">
+        {% csrf_token %}
+        {% if cart.items.exists %}
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Назва курсу</th>
+                        <th>Кількість</th>
+                        <th>Ціна за одиницю</th>
+                        <th>Загальна вартість</th>
+                        <th>Дії</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in cart.items.all %}
+                        <tr>
+                            <td>{{ item.course.title }}</td>
+                            <td>
+                                <input type="number" name="quantity_{{ item.id }}" value="{{ item.quantity }}" min="0" class="form-control">
+                            </td>
+                            <td>{{ item.course.price }} грн</td>
+                            <td>{{ item.get_cost }} грн</td>
+                            <td>
+                                <a href="{% url 'remove_from_cart' item.id %}" class="btn btn-danger">Видалити</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <button type="submit" class="btn btn-primary">Оновити кошик</button>
+            <p>Загальна вартість зі знижкою: {{ discounted_total }} грн ({{ discount_percentage }}% знижка)</p>
+            <a href="{% url 'checkout' %}" class="btn btn-success">Перейти до оформлення замовлення</a>
+        {% else %}
+            <p>Ваш кошик порожній.</p>
+        {% endif %}
+    </form>
+</div>
+{% endblock %}

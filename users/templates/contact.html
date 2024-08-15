@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Контакти{% endblock %}
+
+{% block content %}
+<div class="contact-container">
+    <div class="contact-form">
+        <h2>Контакти</h2>
+        <p>
+            Телефон: +38 (066) 034 42 30 <br>
+            E-mail: nedilja90@gmail.com <br>
+            Адреса: Українa, м.Київ
+        </p>
+        <p>Залишилися питання? <br> Заповніть форму нижче, щоб надіслати нам свій запит.</p>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="id_name">Ім'я</label>
+                {{ form.name }}
+            </div>
+            <div class="form-group">
+                <label for="id_email">E-mail</label>
+                {{ form.email }}
+            </div>
+            <div class="form-group">
+                <label for="css/images/contacts.jpg">Ваш запит</label>
+                {{ form.message }}
+            </div>
+            <button type="submit" class="btn btn-primary">Надіслати</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

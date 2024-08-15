@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block title %}Демо тести{% endblock %}
+
+{% block content %}
+<div class="demo-testing-container">
+    <h2>Демо-матеріали для {{ course.title }}</h2>
+    <ul>
+        {% for material in demo_materials %}
+            <li><a href="{{ material.url }}">{{ material.title }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <h3>Питання по Django</h3>
+
+    <div class="question">
+        <p><strong>1. Яка функція використовується для рендерингу шаблону в Django?</strong></p>
+        <ul>
+            <li><button onclick="checkAnswer(this, 'wrong')">render_template()</button></li>
+            <li><button onclick="checkAnswer(this, 'wrong')">template_render()</button></li>
+            <li><button onclick="checkAnswer(this, 'correct')">render()</button></li>
+        </ul>
+    </div>
+
+    <div class="question">
+        <p><strong>2. Яка з наступних моделей є базовою для всіх моделей в Django?</strong></p>
+        <ul>
+            <li><button onclick="checkAnswer(this, 'correct')">Model</button></li>
+            <li><button onclick="checkAnswer(this, 'wrong')">BaseModel</button></li>
+            <li><button onclick="checkAnswer(this, 'wrong')">AbstractModel</button></li>
+        </ul>
+    </div>
+
+    <div class="question">
+        <p><strong>3. Яка команда використовується для створення міграцій в Django?</strong></p>
+        <ul>
+            <li><button onclick="checkAnswer(this, 'wrong')">python manage.py migrate</button></li>
+            <li><button onclick="checkAnswer(this, 'correct')">python manage.py makemigrations</button></li>
+            <li><button onclick="checkAnswer(this, 'wrong')">python manage.py create_migrations</button></li>
+        </ul>
+    </div>
+
+    <div class="result" id="result">
+        <h4>Ваш результат: <span id="score">0</span>/300</h4>
+        <p id="recommendation" style="display: none; font-size: 24px; font-weight: bold; color: #ff0000;">Рекомендуємо Вам пройти наш курс!</p>
+    </div>
+</div>
+
+<script>
+let score = 0;
+let questionsAnswered = 0;
+const totalQuestions = 3;
+
+function checkAnswer(button, status) {
+    if (status === 'correct') {
+        score += 100;
+        button.style.backgroundColor = 'green';
+        button.style.color = 'white';
+        button.textContent += ' ✓ Правильно!';
+    } else {
+        button.style.backgroundColor = 'red';
+        button.style.color = 'white';
+        button.textContent += ' ✗ Неправильно';
+    }
+
+    // Заборонити натискати інші варіанти після вибору
+    const buttons = button.parentElement.getElementsByTagName('button');
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].disabled = true;
+    }
+
+    // Оновити кількість відповідей та результат
+    questionsAnswered++;
+    if (questionsAnswered === totalQuestions) {
+        document.getElementById('score').textContent = score;
+        if (score > 100) {
+            document.getElementById('recommendation').style.display = 'block';
+        }
+    }
+}
+</script>
+{% endblock %}

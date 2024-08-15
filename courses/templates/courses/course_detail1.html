@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ course.title }}{% endblock %}
+
+{% block content %}
+    <div class="container my-4">
+        <h2>{{ course.title }}</h2>
+        <p>{{ course.description }}</p>
+
+        <div class="list-group">
+            <!-- Перенаправлення на сторінку відео курсу -->
+            <a href="{% url 'video:course_videos' course.id %}" class="list-group-item list-group-item-action">
+                Твої відео по курсу
+            </a>
+            <!-- Перенаправлення на сторінку тестів курсу -->
+            <a href="{% url 'testing:take_test' course.id %}" class="list-group-item list-group-item-action">
+                Твої тести по курсу
+            </a>
+        </div>
+    </div>
+{% endblock %}

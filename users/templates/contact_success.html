@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Дякуємо за ваш запит!{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Дякуємо!</h2>
+    <p>Ваш запит було успішно надіслано. Ми зв'яжемося з вами найближчим часом.</p>
+    <a href="{% url 'home' %}" class="btn btn-secondary mt-3">На головну</a>
+    <a href="{% url 'course_list' %}" class="btn btn-primary mt-3">До курсів</a>
+</div>
+{% endblock %}

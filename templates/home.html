@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="hero-image">
+    <div class="overlay d-flex flex-column justify-content-center align-items-center text-center text-white">
+        <h1 class="display-4 font-weight-bold">Курси програмування <br> та інші напрямки розвитку в IT</h1>
+        <p class="lead">Стажування на реальних проектах з наступним працевлаштуванням</p>
+        <a href="{% url 'course_list' %}" class="btn btn-primary btn-lg mt-3">Записатися на курс</a>
+    </div>
+</div>
+{% endblock %}

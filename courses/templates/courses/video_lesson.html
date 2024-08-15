@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %}Video Lessons{% endblock %}
+
+{% block content %}
+    <h2>Video Lessons for {{ course.title }}</h2>
+    <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="{{ lesson.video_url }}" allowfullscreen></iframe>
+    </div>
+{% endblock %}

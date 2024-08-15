@@ -1,0 +1,476 @@
+.hero-image {
+    background-image: url('../images/earth_background.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+.navbar {
+    background-color: #082c59; /* Темний фон навігаційної панелі */
+    padding: 10px 20px; /* Внутрішні відступи для панелі */
+}
+.navbar-brand {
+    color: #ffffff !important; /* Темно-голубий колір для бренду */
+    font-size: 1.5rem; /* Розмір шрифту для бренду */
+    font-weight: bold; /* Жирний шрифт для бренду */
+}
+.navbar-nav .nav-link {
+    color: #ffffff; /* Колір тексту для посилань */
+    font-size: 1rem; /* Розмір шрифту для посилань */
+    margin-right: 15px; /* Відступ між посиланнями */
+    transition: color 0.3s; /* Плавний перехід для кольору */
+}
+.navbar-nav .nav-link:hover {
+    color: #fff; /* Колір при наведенні */
+}
+.navbar-nav .nav-link.active {
+    color: #0066cc; /* Темно-голубий колір для активного посилання */
+    font-weight: bold; /* Жирний шрифт для активного посилання */
+}
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-image h1 {
+    font-weight: bold;
+}
+
+.hero-image p {
+    margin-top: 20px;
+}
+
+.hero-image a.btn {
+    margin-top: 20px;
+}
+.contact-container {
+    background-image: url('../images/contacts.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 15px;
+}
+
+.contact-form {
+    background-image: url('../images/contacts.jpg');
+    background-color: rgb(159, 164, 234);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgb(255, 255, 255);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+.contact-form h2 {
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.contact-form p {
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.contact-form .form-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.contact-form .form-group {
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.contact-form .btn-primary {
+    width: 100%;
+    padding: 10px;
+}
+.courses-container {
+    background-image: url('../images/contacts.jpg'); /* Додаємо фонове зображення через static */
+    background-size: cover;
+    background-position: center;
+    padding: 300px;
+    border-radius: 0px;
+    color: #ffffff; /* Білий текст для контрасту з темним фоном */
+}
+
+.courses-container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.list-group-item {
+    background-color: rgba(255, 255, 255, 0.8); /* Прозорий білий фон для кожного елементу списку */
+    color: #333; /* Колір тексту */
+    margin-bottom: 10px;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.list-group-item:hover {
+    background-color: rgba(255, 255, 255, 1); /* Зміна фону при наведенні */
+    color: #093773;
+    text-decoration: rgba(255, 255, 255, 1);
+}
+
+.list-group-item-action {
+    border-radius: 5px;
+}
+
+html, body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Запобігання горизонтальному скролінгу */
+}
+
+.course-detail-container {
+    background-image: url('../images/contacts.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%; /* Забезпечення повної ширини */
+    min-height: 100vh; /* Мінімальна висота 100% від вікна браузера */
+    padding: 40px 0;
+    box-sizing: border-box; /* Врахування відступів в ширині */
+    color: #ffffff;}
+
+/* Стилі для контейнера сторінки відгуків */
+.reviews-container {
+    background-color: #f9f9f9;
+    padding: 20px 15px;
+    border-radius: 10px;
+}
+
+.review-form {
+    background-image: url('../images/contacts.jpg');
+    margin-bottom: 15px;
+}
+
+.review-list .review {
+    margin-bottom: 20px;
+}
+
+.review-list h5 {
+    font-weight: bold;
+}
+
+.review-list p {
+    margin: 10px 0;
+}
+
+.review-list small {
+    display: block;
+    margin-top: 5px;
+    color: #555;
+}
+.reviews-container {
+    background-image: url('../images/contacts.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 15px;
+}
+
+/* Стилі для форми додавання відгуку */
+.review-form {
+    color: white;
+    background-color: rgb(42, 42, 126); /* Напівпрозорий фон з легким відтінком */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgb(255, 255, 255); /* Легкий тіньовий ефект */
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Заголовок форми */
+.review-form h4 {
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+/* Поля форми */
+.review-form .form-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #ffffff; /* Білий текст */
+}
+
+.review-form .form-group {
+    margin-bottom: 15px;
+    color: #ffffff; /* Зміна кольору тексту на білий для інших текстових елементів */
+}
+
+/* Стилі для кнопки */
+.review-form .btn-primary {
+    width: 100%;
+    padding: 10px;
+    background-color: #0c3063; /* Темно-голубий колір кнопки */
+    border-color: #0c3063;
+    color: white;
+}
+
+.review-form .btn-primary:hover {
+    background-color: #092349; /* Темніший відтінок при наведенні */
+    border-color: #092349;
+    color: white;
+}
+
+/* Стилі для списку відгуків */
+.review-list {
+    background-image: url('../images/contacts.jpg');
+    margin-top: 30px;
+    background-color: rgb(11, 43, 85);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+    color: white;
+}
+
+.review-list .review {
+    background-image: url('../images/contacts.jpg');
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: rgb(9, 55, 115);
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgb(255, 255, 255);
+}
+
+.review-list h5 {
+    font-weight: bold;
+    color: #0066cc;
+    margin-bottom: 5px;
+}
+
+.review-list p {
+    margin: 10px 0;
+    color: #ffffff;
+}
+
+.review-list small {
+    display: block;
+    margin-top: 5px;
+    color: #ffffff;
+}
+
+/* Стилі для карти */
+.cart-container {
+    background-image: url('../images/contacts.jpg');
+    padding: 40px;
+    background-color: #2b71b6;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgb(9, 55, 115);
+}
+
+.cart-container h2 {
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.cart-container table {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.cart-container .table-striped th {
+    background-color: #093773;
+    color: #ffffff;
+    text-align: center;
+    background-image: url('../images/contacts.jpg');
+}
+
+.cart-container .table-striped td {
+    text-align: center;
+    vertical-align: middle;
+    color: white;
+}
+
+.cart-container input[type="number"] {
+    text-align: center;
+    background-image: url('../images/contacts.jpg');
+    color: white;
+}
+
+.cart-container .btn-primary {
+    background-color: #093773;
+    border-color: #d63172;
+    background-image: url('../images/contacts.jpg');
+}
+
+.cart-container .btn-success {
+    background-color: #093773;
+    border-color: #d63172;
+    margin-top: 15px;
+    background-image: url('../images/contacts.jpg');
+}
+
+.cart-container .btn-danger {
+    background-color: #093773;
+    border-color: #d63172;
+    background-image: url('../images/contacts.jpg');
+}
+
+.cart-container p {
+    font-weight: bold;
+    margin-top: 20px;
+    color: #ffffff;
+}
+
+.cart-container .btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.checkout-container {
+    background-image: url('../images/contacts.jpg');
+    padding: 40px;
+    border-color: #007bff;
+    color: #ffffff;
+    background-color: #2b71b6;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgb(235, 237, 241);
+}
+
+/* Заголовок сторінки оформлення замовлення */
+.checkout-container h2 {
+    background-image: url('../images/contacts.jpg');
+    border-color: #007bff;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 28px;
+    margin-bottom: 20px;
+
+}
+
+/* Стилі для заголовка загальної вартості */
+.checkout-container h3 {
+    background-image: url('../images/contacts.jpg');
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    border-color: #007bff;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Стилі для форми */
+.checkout-container form .form-control {
+    background-image: url('../images/contacts.jpg');
+    margin-bottom: 15px;
+    border-color: #007bff;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+}
+
+/* Фокус для полів форми */
+.checkout-container form .form-control:focus {
+    background-image: url('../images/contacts.jpg');
+    border-color: #007bff;
+    color: #ffffff;
+    outline: 0;
+    box-shadow: 0 0 5px rgba(202, 218, 236, 0.25);
+}
+
+/* Стилі для кнопки оформлення замовлення */
+.checkout-container button.btn-primary {
+    background-image: url('../images/contacts.jpg');
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #ffffff;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.checkout-container button.btn-primary:hover {
+    background-image: url('../images/contacts.jpg');
+    border-color: #007bff;
+    color: #ffffff;
+}
+
+.checkout-success-container {
+    background-image: url('../images/contacts.jpg');
+    padding: 40px;
+    border-color: #28a745; /* Green border for success */
+    color: #ffffff;
+    background-color: #218838; /* Darker green for background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgb(235, 237, 241);
+}
+
+/* Заголовок сторінки підтвердження замовлення */
+.checkout-success-container h2 {
+    background-image: url('../images/contacts.jpg');
+    border-color: #28a745;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* Стилі для тексту підтвердження замовлення */
+.checkout-success-container p {
+    background-image: url('../images/contacts.jpg');
+    color: #ffffff;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Стилі для кнопки повернення до магазину */
+.checkout-success-container button.btn-success {
+    background-image: url('../images/contacts.jpg');
+    background-color: #28a745;
+    border-color: #28a745;
+    color: #ffffff;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.checkout-success-container button.btn-success:hover {
+    background-image: url('../images/contacts.jpg');
+    background-color: #218838; /* Darker green on hover */
+    border-color: #28a745;
+    color: #ffffff;
+}
+
+

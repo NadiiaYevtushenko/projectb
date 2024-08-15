@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Оформлення замовлення{% endblock %}
+
+{% block content %}
+    <div class="checkout-container">
+        <h2>Оформлення замовлення</h2>
+
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <h3>Загальна вартість: {{ discounted_total }} грн</h3>
+            <p>Знижка: {{ discount_percentage }}%</p>
+            <button type="submit" class="btn btn-primary">Оформити замовлення</button>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %}Ви вийшли з системи{% endblock %}
+
+{% block content %}
+    <div class="container text-center">
+        <h2>Ви успішно вийшли з системи</h2>
+        <p>Дякуємо, що користувалися нашим сервісом. Ви можете <a href="{% url 'login' %}">увійти знову</a> або <a href="{% url 'home' %}">повернутися на головну сторінку</a>.</p>
+    </div>
+{% endblock %}

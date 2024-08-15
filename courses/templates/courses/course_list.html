@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Courses{% endblock %}
+
+{% block content %}
+<div class="courses-container">
+    <h2>Courses</h2>
+    <div class="list-group">
+        {% for course in courses %}
+            <a href="{% url 'course_detail' course.id %}" class="list-group-item list-group-item-action">
+                {{ course.title }}
+            </a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
